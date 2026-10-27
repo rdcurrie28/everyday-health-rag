@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Build the image with Cloud Build and deploy it to Cloud Run.
 #
-# Usage: PROJECT_ID=... REGION=us-central1 AR_REPO=apps SERVICE=everyday-health-rag ./deploy.sh [--warm]
+# Usage: PROJECT_ID=... REGION=us-central1 AR_REPO=apps SERVICE=health-rag-app ./deploy.sh [--warm]
 #
 # One-time setup (run once per project):
 #   1. gcloud services enable run.googleapis.com cloudbuild.googleapis.com \

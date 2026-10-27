@@ -4,7 +4,7 @@ Ask follow-up questions about the US *Dietary Guidelines for Americans* and *Phy
 
 > Demo GIF: _to be recorded after the first deploy._
 
-**Live demo:** _URL added after deploy._ The password is on the author's resume or available on request (open an issue).
+**Live demo:** <https://health-rag-app-1054101628971.us-central1.run.app>. The password is on the author's resume or available on request (open an issue).
 
 ## What it shows
 
@@ -149,8 +149,8 @@ uv run python -m evals.run_eval --mode retrieval --label baseline --index-dir .i
 See the one-time setup at the top of [`deploy.sh`](deploy.sh): APIs, an Artifact Registry repo, two secrets, a runtime service account, the GCP budget and the Anthropic workspace limit. Then:
 
 ```bash
-PROJECT_ID=my-project REGION=us-central1 AR_REPO=apps SERVICE=everyday-health-rag ./deploy.sh          # scale to zero
-PROJECT_ID=my-project REGION=us-central1 AR_REPO=apps SERVICE=everyday-health-rag ./deploy.sh --warm   # keep one instance
+PROJECT_ID=my-project REGION=us-central1 AR_REPO=apps SERVICE=health-rag-app ./deploy.sh          # scale to zero
+PROJECT_ID=my-project REGION=us-central1 AR_REPO=apps SERVICE=health-rag-app ./deploy.sh --warm   # keep one instance
 ```
 
 Post-deploy smoke test:

@@ -1,5 +1,6 @@
 import json
 from dataclasses import dataclass
+from functools import cache
 
 import chromadb
 from chromadb.config import Settings as ChromaSettings
@@ -89,3 +90,9 @@ def open_retriever(settings: Settings) -> Retriever:
         create_collection_if_not_exists=False,
     )
     return Retriever(store, manifest)
+
+
+@cache
+def shared_retriever(settings: Settings) -> Retriever:
+    """One retriever per process, so healthrag.serve can load it before the server starts."""
+    return open_retriever(settings)
