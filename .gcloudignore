@@ -1,0 +1,13 @@
+.git
+.github
+.venv
+.index*
+.models
+.env*
+.pytest_cache
+.ruff_cache
+.coverage
+__pycache__
+evals
+tests
+docs

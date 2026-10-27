@@ -1,0 +1,15 @@
+[[doc]]
+id = "dga"
+label = "Dietary Guidelines"
+file = "dga.pdf"
+url = "https://cdn.realfood.gov/DGA.pdf"
+edition = "2025–2030 (10th edition, January 2026)"
+skip_pages = ["1"]
+
+[[doc]]
+id = "pag"
+label = "Physical Activity Guidelines"
+file = "pag.pdf"
+url = "https://odphp.health.gov/paguidelines/second-edition/pdf/Physical_Activity_Guidelines_2nd_edition.pdf"
+edition = "2nd edition (2018)"
+skip_pages = ["1", "3-5", "113-118"]

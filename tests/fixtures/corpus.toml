@@ -1,0 +1,7 @@
+[[doc]]
+id = "mini"
+label = "Mini Guide"
+file = "mini.pdf"
+url = "https://example.invalid/mini.pdf"
+edition = "test edition"
+skip_pages = []

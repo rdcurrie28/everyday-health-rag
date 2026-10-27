@@ -1,0 +1,454 @@
+{
+  "mode": "e2e",
+  "label": "tuned",
+  "manifest": {
+    "sources": {
+      "dga": {
+        "label": "Dietary Guidelines",
+        "edition": "2025\u20132030 (10th edition, January 2026)",
+        "url": "https://cdn.realfood.gov/DGA.pdf",
+        "chunks": 24
+      },
+      "pag": {
+        "label": "Physical Activity Guidelines",
+        "edition": "2nd edition (2018)",
+        "url": "https://odphp.health.gov/paguidelines/second-edition/pdf/Physical_Activity_Guidelines_2nd_edition.pdf",
+        "chunks": 346
+      }
+    },
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_dim": 384,
+    "query_prefix": "Represent this sentence for searching relevant passages: ",
+    "chunk_size": 1000,
+    "chunk_overlap": 150,
+    "baseline": false,
+    "approx_tokens_max": 260,
+    "approx_tokens_p95": 259.0,
+    "libraries": {
+      "langchain-core": "1.7.0",
+      "langchain-community": "0.4.2",
+      "langchain-chroma": "1.1.0",
+      "chromadb": "1.5.9",
+      "fastembed": "0.9.1"
+    },
+    "built_at": "2026-10-27T00:02:47+00:00"
+  },
+  "summary": {
+    "rewrite": {
+      "first": "6/6",
+      "followup": "5/5",
+      "overall": 1.0
+    },
+    "ontopic_top1_distance_max": 0.2142,
+    "citations_ok": "11/11",
+    "mean_cost_usd": 0.001626,
+    "max_cost_usd": 0.002204,
+    "mean_ttft_ms": 516
+  },
+  "rows": [
+    {
+      "case_id": "first-adults-minutes",
+      "type": "first",
+      "strategy": "rewrite",
+      "query": "How many minutes of physical activity do adults need each week?",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p69-2",
+        "pag-p68-1",
+        "pag-p75-0"
+      ],
+      "distances": [
+        0.1304,
+        0.1432,
+        0.1436
+      ],
+      "rewritten": false,
+      "fallback": false,
+      "input_tokens": 886,
+      "output_tokens": 125,
+      "cost_usd": 0.001511,
+      "ttft_ms": 1514,
+      "citations_ok": true,
+      "citations": [
+        [
+          "Physical Activity Guidelines",
+          "PDF p. 69"
+        ],
+        [
+          "Physical Activity Guidelines",
+          "PDF p. 68"
+        ]
+      ],
+      "error": null,
+      "answer": "According to the Physical Activity Guidelines, adults should aim to do at least 150 to 300 minutes of moderate-intensity physical activity a week, or an equivalent amount (75 to 150 minutes) of vigorous-intensity activity. They can also do an equivalent combination of both moderate- and vigorous-intensity activity. (Physical Activity Guidelines, PDF p. 69)\n\nAdditionally, adults should do muscle-strengthening activities of moderate or greater intensity involving all major muscle groups on 2 or more days a week. (Physical Activity Guidelines, PDF p. 68)"
+    },
+    {
+      "case_id": "first-sodium",
+      "type": "first",
+      "strategy": "rewrite",
+      "query": "How much sodium should people eat per day?",
+      "hit": true,
+      "chunk_ids": [
+        "dga-p6-0",
+        "dga-p5-0",
+        "dga-p4-0"
+      ],
+      "distances": [
+        0.1309,
+        0.3177,
+        0.329
+      ],
+      "rewritten": false,
+      "fallback": false,
+      "input_tokens": 1154,
+      "output_tokens": 163,
+      "cost_usd": 0.001969,
+      "ttft_ms": 413,
+      "citations_ok": true,
+      "citations": [
+        [
+          "Dietary Guidelines",
+          "p. 5"
+        ],
+        [
+          "Dietary Guidelines",
+          "p. 5"
+        ],
+        [
+          "Dietary Guidelines",
+          "p. 5"
+        ],
+        [
+          "Dietary Guidelines",
+          "p. 5"
+        ],
+        [
+          "Dietary Guidelines",
+          "p. 5"
+        ]
+      ],
+      "error": null,
+      "answer": "According to the Dietary Guidelines:\n\n- **Ages 14 and above (general population):** Less than 2,300 mg per day of sodium (Dietary Guidelines, p. 5)\n- **Ages 1\u20133:** Less than 1,200 mg per day (Dietary Guidelines, p. 5)\n- **Ages 4\u20138:** Less than 1,500 mg per day (Dietary Guidelines, p. 5)\n- **Ages 9\u201313:** Less than 1,800 mg per day (Dietary Guidelines, p. 5)\n\nThe guidelines also note that highly active individuals may benefit from increased sodium intake to offset sweat losses (Dietary Guidelines, p. 5)."
+    },
+    {
+      "case_id": "first-preschool",
+      "type": "first",
+      "strategy": "rewrite",
+      "query": "How active should preschool-aged children be?",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p47-3",
+        "pag-p47-2",
+        "pag-p8-0"
+      ],
+      "distances": [
+        0.1002,
+        0.1872,
+        0.2352
+      ],
+      "rewritten": false,
+      "fallback": false,
+      "input_tokens": 838,
+      "output_tokens": 121,
+      "cost_usd": 0.001443,
+      "ttft_ms": 404,
+      "citations_ok": true,
+      "citations": [
+        [
+          "Physical Activity Guidelines",
+          "PDF p. 47"
+        ],
+        [
+          "Physical Activity Guidelines",
+          "PDF p. 47"
+        ]
+      ],
+      "error": null,
+      "answer": "According to the Physical Activity Guidelines, preschool-aged children (ages 3 through 5 years) should be physically active throughout the day to enhance growth and development. (Physical Activity Guidelines, PDF p. 47)\n\nA reasonable target is about 3 hours per day of activity of all intensities\u2014light, moderate, or vigorous intensity. This is the average amount of activity observed among children of this age and is consistent with guidelines from Canada, the United Kingdom, and the Commonwealth of Australia. (Physical Activity Guidelines, PDF p. 47)"
+    },
+    {
+      "case_id": "first-infants",
+      "type": "first",
+      "strategy": "rewrite",
+      "query": "What should infants be fed in the first 6 months?",
+      "hit": true,
+      "chunk_ids": [
+        "dga-p7-0",
+        "dga-p7-2",
+        "dga-p7-1"
+      ],
+      "distances": [
+        0.2052,
+        0.2276,
+        0.2281
+      ],
+      "rewritten": false,
+      "fallback": false,
+      "input_tokens": 1046,
+      "output_tokens": 50,
+      "cost_usd": 0.001296,
+      "ttft_ms": 408,
+      "citations_ok": true,
+      "citations": [
+        [
+          "Dietary Guidelines",
+          "p. 6"
+        ]
+      ],
+      "error": null,
+      "answer": "For about the first 6 months of life, infants should be fed only breast milk. When breast milk is not available, feed your baby iron-fortified infant formula. (Dietary Guidelines, p. 6)"
+    },
+    {
+      "case_id": "first-muscle-days",
+      "type": "first",
+      "strategy": "rewrite",
+      "query": "How many days a week should adults do muscle-strengthening activities?",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p63-0",
+        "pag-p61-1",
+        "pag-p63-1"
+      ],
+      "distances": [
+        0.1112,
+        0.1326,
+        0.1329
+      ],
+      "rewritten": false,
+      "fallback": false,
+      "input_tokens": 982,
+      "output_tokens": 38,
+      "cost_usd": 0.001172,
+      "ttft_ms": 451,
+      "citations_ok": true,
+      "citations": [
+        [
+          "Physical Activity Guidelines",
+          "PDF p. 61"
+        ]
+      ],
+      "error": null,
+      "answer": "According to the Physical Activity Guidelines, adults should do muscle-strengthening activities on at least 2 days each week (Physical Activity Guidelines, PDF p. 61)."
+    },
+    {
+      "case_id": "first-dairy",
+      "type": "first",
+      "strategy": "rewrite",
+      "query": "How many servings of dairy should I have per day?",
+      "hit": true,
+      "chunk_ids": [
+        "dga-p3-1",
+        "dga-p3-0",
+        "dga-p4-1"
+      ],
+      "distances": [
+        0.2142,
+        0.3122,
+        0.326
+      ],
+      "rewritten": false,
+      "fallback": false,
+      "input_tokens": 1141,
+      "output_tokens": 58,
+      "cost_usd": 0.001431,
+      "ttft_ms": 437,
+      "citations_ok": true,
+      "citations": [
+        [
+          "Dietary Guidelines",
+          "p. 2"
+        ]
+      ],
+      "error": null,
+      "answer": "According to the Dietary Guidelines, you should consume **3 servings of dairy per day as part of a 2,000-calorie dietary pattern, adjusting as needed based on your individual caloric requirements** (Dietary Guidelines, p. 2)."
+    },
+    {
+      "case_id": "followup-kids",
+      "type": "followup",
+      "strategy": "rewrite",
+      "query": "physical activity guidelines for children minutes per week",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p48-2",
+        "pag-p8-1",
+        "pag-p53-1"
+      ],
+      "distances": [
+        0.1503,
+        0.1792,
+        0.1803
+      ],
+      "rewritten": true,
+      "fallback": false,
+      "input_tokens": 1304,
+      "output_tokens": 180,
+      "cost_usd": 0.002204,
+      "ttft_ms": 420,
+      "citations_ok": true,
+      "citations": [
+        [
+          "Physical Activity Guidelines",
+          "PDF p. 8"
+        ],
+        [
+          "Physical Activity Guidelines",
+          "PDF p. 8"
+        ],
+        [
+          "Physical Activity Guidelines",
+          "PDF p. 8"
+        ],
+        [
+          "Physical Activity Guidelines",
+          "PDF p. 8"
+        ]
+      ],
+      "error": null,
+      "answer": "Children and adolescents ages 6 through 17 years should do 60 minutes (1 hour) or more of moderate-to-vigorous physical activity daily (Physical Activity Guidelines, PDF p. 8).\n\nThis daily activity should include:\n- **Aerobic activity**: Most of the 60 minutes should be moderate- or vigorous-intensity, with vigorous-intensity activity on at least 3 days a week (Physical Activity Guidelines, PDF p. 8)\n- **Muscle-strengthening activity**: On at least 3 days a week (Physical Activity Guidelines, PDF p. 8)\n- **Bone-strengthening activity**: On at least 3 days a week (Physical Activity Guidelines, PDF p. 8)"
+    },
+    {
+      "case_id": "followup-sodium-children",
+      "type": "followup",
+      "strategy": "rewrite",
+      "query": "sodium intake recommendations young children",
+      "hit": true,
+      "chunk_ids": [
+        "dga-p6-0",
+        "dga-p8-0",
+        "dga-p8-1"
+      ],
+      "distances": [
+        0.1828,
+        0.2977,
+        0.3026
+      ],
+      "rewritten": true,
+      "fallback": false,
+      "input_tokens": 1278,
+      "output_tokens": 95,
+      "cost_usd": 0.001753,
+      "ttft_ms": 395,
+      "citations_ok": true,
+      "citations": [
+        [
+          "Dietary Guidelines",
+          "p. 5"
+        ],
+        [
+          "Dietary Guidelines",
+          "p. 5"
+        ]
+      ],
+      "error": null,
+      "answer": "For young children, sodium recommendations vary by age (Dietary Guidelines, p. 5):\n\n- Ages 1\u20133: less than 1,200 mg per day\n- Ages 4\u20138: less than 1,500 mg per day\n- Ages 9\u201313: less than 1,800 mg per day\n\n(Dietary Guidelines, p. 5)"
+    },
+    {
+      "case_id": "followup-vigorous",
+      "type": "followup",
+      "strategy": "rewrite",
+      "query": "vigorous-intensity aerobic activity minutes per week adults",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p63-1",
+        "pag-p8-2",
+        "pag-p109-2"
+      ],
+      "distances": [
+        0.1213,
+        0.1412,
+        0.1532
+      ],
+      "rewritten": true,
+      "fallback": false,
+      "input_tokens": 1211,
+      "output_tokens": 107,
+      "cost_usd": 0.001746,
+      "ttft_ms": 400,
+      "citations_ok": true,
+      "citations": [
+        [
+          "Physical Activity Guidelines",
+          "PDF p. 8"
+        ],
+        [
+          "Physical Activity Guidelines",
+          "PDF p. 63"
+        ]
+      ],
+      "error": null,
+      "answer": "If you do vigorous-intensity activity instead, you can do 75 to 150 minutes a week to gain substantial health benefits (Physical Activity Guidelines, PDF p. 8). Using the 2-to-1 rule of thumb, 150 minutes of vigorous-intensity aerobic activity provides about the same benefits as 300 minutes of moderate-intensity activity (Physical Activity Guidelines, PDF p. 63)."
+    },
+    {
+      "case_id": "followup-solid-foods",
+      "type": "followup",
+      "strategy": "rewrite",
+      "query": "infant solid foods introduction age guidelines",
+      "hit": true,
+      "chunk_ids": [
+        "dga-p7-2",
+        "dga-p8-0",
+        "dga-p7-1"
+      ],
+      "distances": [
+        0.1746,
+        0.2037,
+        0.206
+      ],
+      "rewritten": true,
+      "fallback": false,
+      "input_tokens": 1264,
+      "output_tokens": 92,
+      "cost_usd": 0.001724,
+      "ttft_ms": 432,
+      "citations_ok": true,
+      "citations": [
+        [
+          "Dietary Guidelines",
+          "p. 6"
+        ],
+        [
+          "Dietary Guidelines",
+          "p. 6"
+        ]
+      ],
+      "error": null,
+      "answer": "Infants may begin to have solid foods at about 6 months of age (Dietary Guidelines, p. 6). It is crucial to continue breastfeeding or formula feeding while solids are introduced, as breast milk or infant formula continues to be the main source of nutrition for infants up to 12 months of age (Dietary Guidelines, p. 6)."
+    },
+    {
+      "case_id": "followup-pregnancy-running",
+      "type": "followup",
+      "strategy": "rewrite",
+      "query": "running safety during pregnancy physical activity guidelines",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p93-2",
+        "pag-p9-1",
+        "pag-p80-3"
+      ],
+      "distances": [
+        0.1414,
+        0.1766,
+        0.1798
+      ],
+      "rewritten": true,
+      "fallback": false,
+      "input_tokens": 1069,
+      "output_tokens": 113,
+      "cost_usd": 0.001634,
+      "ttft_ms": 405,
+      "citations_ok": true,
+      "citations": [
+        [
+          "Physical Activity Guidelines",
+          "PDF p. 9"
+        ],
+        [
+          "Physical Activity Guidelines",
+          "PDF p. 9"
+        ]
+      ],
+      "error": null,
+      "answer": "The excerpts don't directly address whether running specifically is safe during pregnancy. However, they do state that \"women who habitually engaged in vigorous-intensity aerobic activity or who were physically active before pregnancy can continue these activities during pregnancy and the postpartum period\" (Physical Activity Guidelines, PDF p. 9). The guides recommend that pregnant women consult their health care provider about whether or how to adjust their physical activity during pregnancy (Physical Activity Guidelines, PDF p. 9)."
+    }
+  ]
+}

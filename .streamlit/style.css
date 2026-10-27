@@ -1,0 +1,43 @@
+.source-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.1rem 0 0.4rem;
+}
+
+.chips-label {
+  font-size: 0.8rem;
+  color: #52606D;
+  align-self: center;
+}
+
+.source-chip {
+  border: 1px solid #F2765E;
+  background: #FDE9E4;
+  color: #1F2933;
+  border-radius: 999px;
+  padding: 0.1rem 0.65rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+[data-testid="stChatMessage"] {
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+}
+
+[data-testid="stBaseButton-secondary"] {
+  border-color: #F2765E;
+  background: #FDE9E4;
+  color: #1F2933;
+}
+
+[data-testid="stBaseButton-secondary"]:hover {
+  border-color: #0B7A6B;
+  color: #0B7A6B;
+}
+
+[data-testid="stCaptionContainer"] em {
+  font-style: normal;
+  font-weight: 600;
+}

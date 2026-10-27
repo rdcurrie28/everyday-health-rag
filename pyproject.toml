@@ -1,0 +1,45 @@
+[project]
+name = "everyday-health-rag"
+version = "0.1.0"
+description = "Chat with the US Dietary and Physical Activity Guidelines: conversational RAG with citations, on Streamlit and Cloud Run."
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "streamlit>=1.50",
+    "langchain-core>=1,<2",
+    "langchain-anthropic>=1,<2",
+    "langchain-chroma>=1,<2",
+    "langchain-community>=0.4",
+    "langchain-text-splitters>=1,<2",
+    "anthropic",
+    "chromadb",
+    "fastembed",
+    "pypdf",
+    "python-dotenv",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "ruff",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["healthrag"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/fixtures/make_mini_pdf.py" = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

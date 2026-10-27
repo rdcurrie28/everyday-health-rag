@@ -1,0 +1,858 @@
+{
+  "mode": "retrieval",
+  "label": "minilm-v2",
+  "manifest": {
+    "sources": {
+      "dga": {
+        "label": "Dietary Guidelines",
+        "edition": "2025\u20132030 (10th edition, January 2026)",
+        "url": "https://cdn.realfood.gov/DGA.pdf",
+        "chunks": 24
+      },
+      "pag": {
+        "label": "Physical Activity Guidelines",
+        "edition": "2nd edition (2018)",
+        "url": "https://odphp.health.gov/paguidelines/second-edition/pdf/Physical_Activity_Guidelines_2nd_edition.pdf",
+        "chunks": 346
+      }
+    },
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_dim": 384,
+    "query_prefix": "",
+    "chunk_size": 1000,
+    "chunk_overlap": 150,
+    "baseline": false,
+    "approx_tokens_max": 260,
+    "approx_tokens_p95": 259.0,
+    "libraries": {
+      "langchain-core": "1.7.0",
+      "langchain-community": "0.4.2",
+      "langchain-chroma": "1.1.0",
+      "chromadb": "1.5.9",
+      "fastembed": "0.9.1"
+    },
+    "built_at": "2026-10-27T00:09:09+00:00"
+  },
+  "summary": {
+    "raw": {
+      "first": "7/7",
+      "followup": "1/5",
+      "overall": 0.667,
+      "overall_after_cutoff": 0.667
+    },
+    "joined": {
+      "first": "7/7",
+      "followup": "5/5",
+      "overall": 1.0,
+      "overall_after_cutoff": 1.0
+    },
+    "gold": {
+      "first": "7/7",
+      "followup": "5/5",
+      "overall": 1.0,
+      "overall_after_cutoff": 1.0
+    },
+    "offtopic_not_covered": "6/6",
+    "ontopic_top1_distance_max": 0.6551
+  },
+  "rows": [
+    {
+      "case_id": "first-adults-minutes",
+      "type": "first",
+      "strategy": "raw",
+      "query": "How many minutes of physical activity do adults need each week?",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p8-2",
+        "pag-p68-0",
+        "pag-p63-1"
+      ],
+      "distances": [
+        0.2209,
+        0.2268,
+        0.2286
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "first-adults-minutes",
+      "type": "first",
+      "strategy": "joined",
+      "query": "How many minutes of physical activity do adults need each week?",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p8-2",
+        "pag-p68-0",
+        "pag-p63-1"
+      ],
+      "distances": [
+        0.2209,
+        0.2268,
+        0.2286
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "first-adults-minutes",
+      "type": "first",
+      "strategy": "gold",
+      "query": "How many minutes of physical activity do adults need each week?",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p8-2",
+        "pag-p68-0",
+        "pag-p63-1"
+      ],
+      "distances": [
+        0.2209,
+        0.2268,
+        0.2286
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "first-sodium",
+      "type": "first",
+      "strategy": "raw",
+      "query": "How much sodium should people eat per day?",
+      "hit": true,
+      "chunk_ids": [
+        "dga-p6-0",
+        "dga-p4-0",
+        "dga-p5-0"
+      ],
+      "distances": [
+        0.3417,
+        0.472,
+        0.5172
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "first-sodium",
+      "type": "first",
+      "strategy": "joined",
+      "query": "How much sodium should people eat per day?",
+      "hit": true,
+      "chunk_ids": [
+        "dga-p6-0",
+        "dga-p4-0",
+        "dga-p5-0"
+      ],
+      "distances": [
+        0.3417,
+        0.472,
+        0.5172
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "first-sodium",
+      "type": "first",
+      "strategy": "gold",
+      "query": "How much sodium should people eat per day?",
+      "hit": true,
+      "chunk_ids": [
+        "dga-p6-0",
+        "dga-p4-0",
+        "dga-p5-0"
+      ],
+      "distances": [
+        0.3417,
+        0.472,
+        0.5172
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "first-preschool",
+      "type": "first",
+      "strategy": "raw",
+      "query": "How active should preschool-aged children be?",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p47-3",
+        "pag-p47-2",
+        "pag-p8-0"
+      ],
+      "distances": [
+        0.207,
+        0.2894,
+        0.3533
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "first-preschool",
+      "type": "first",
+      "strategy": "joined",
+      "query": "How active should preschool-aged children be?",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p47-3",
+        "pag-p47-2",
+        "pag-p8-0"
+      ],
+      "distances": [
+        0.207,
+        0.2894,
+        0.3533
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "first-preschool",
+      "type": "first",
+      "strategy": "gold",
+      "query": "How active should preschool-aged children be?",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p47-3",
+        "pag-p47-2",
+        "pag-p8-0"
+      ],
+      "distances": [
+        0.207,
+        0.2894,
+        0.3533
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "first-infants",
+      "type": "first",
+      "strategy": "raw",
+      "query": "What should infants be fed in the first 6 months?",
+      "hit": true,
+      "chunk_ids": [
+        "dga-p7-2",
+        "dga-p8-0",
+        "dga-p7-0"
+      ],
+      "distances": [
+        0.3553,
+        0.3812,
+        0.4077
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "first-infants",
+      "type": "first",
+      "strategy": "joined",
+      "query": "What should infants be fed in the first 6 months?",
+      "hit": true,
+      "chunk_ids": [
+        "dga-p7-2",
+        "dga-p8-0",
+        "dga-p7-0"
+      ],
+      "distances": [
+        0.3553,
+        0.3812,
+        0.4077
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "first-infants",
+      "type": "first",
+      "strategy": "gold",
+      "query": "What should infants be fed in the first 6 months?",
+      "hit": true,
+      "chunk_ids": [
+        "dga-p7-2",
+        "dga-p8-0",
+        "dga-p7-0"
+      ],
+      "distances": [
+        0.3553,
+        0.3812,
+        0.4077
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "first-muscle-days",
+      "type": "first",
+      "strategy": "raw",
+      "query": "How many days a week should adults do muscle-strengthening activities?",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p63-0",
+        "pag-p61-1",
+        "pag-p63-1"
+      ],
+      "distances": [
+        0.1517,
+        0.2178,
+        0.2379
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "first-muscle-days",
+      "type": "first",
+      "strategy": "joined",
+      "query": "How many days a week should adults do muscle-strengthening activities?",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p63-0",
+        "pag-p61-1",
+        "pag-p63-1"
+      ],
+      "distances": [
+        0.1517,
+        0.2178,
+        0.2379
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "first-muscle-days",
+      "type": "first",
+      "strategy": "gold",
+      "query": "How many days a week should adults do muscle-strengthening activities?",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p63-0",
+        "pag-p61-1",
+        "pag-p63-1"
+      ],
+      "distances": [
+        0.1517,
+        0.2178,
+        0.2379
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "first-dairy",
+      "type": "first",
+      "strategy": "raw",
+      "query": "How many servings of dairy should I have per day?",
+      "hit": true,
+      "chunk_ids": [
+        "dga-p3-0",
+        "dga-p3-1",
+        "dga-p4-0"
+      ],
+      "distances": [
+        0.4614,
+        0.4641,
+        0.5197
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "first-dairy",
+      "type": "first",
+      "strategy": "joined",
+      "query": "How many servings of dairy should I have per day?",
+      "hit": true,
+      "chunk_ids": [
+        "dga-p3-0",
+        "dga-p3-1",
+        "dga-p4-0"
+      ],
+      "distances": [
+        0.4614,
+        0.4641,
+        0.5197
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "first-dairy",
+      "type": "first",
+      "strategy": "gold",
+      "query": "How many servings of dairy should I have per day?",
+      "hit": true,
+      "chunk_ids": [
+        "dga-p3-0",
+        "dga-p3-1",
+        "dga-p4-0"
+      ],
+      "distances": [
+        0.4614,
+        0.4641,
+        0.5197
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "first-pregnancy-exercise",
+      "type": "first",
+      "strategy": "raw",
+      "query": "Is it safe to exercise during pregnancy?",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p80-3",
+        "pag-p80-0",
+        "pag-p93-2"
+      ],
+      "distances": [
+        0.2567,
+        0.2669,
+        0.2863
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "first-pregnancy-exercise",
+      "type": "first",
+      "strategy": "joined",
+      "query": "Is it safe to exercise during pregnancy?",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p80-3",
+        "pag-p80-0",
+        "pag-p93-2"
+      ],
+      "distances": [
+        0.2567,
+        0.2669,
+        0.2863
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "first-pregnancy-exercise",
+      "type": "first",
+      "strategy": "gold",
+      "query": "Is it safe to exercise during pregnancy?",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p80-3",
+        "pag-p80-0",
+        "pag-p93-2"
+      ],
+      "distances": [
+        0.2567,
+        0.2669,
+        0.2863
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "followup-kids",
+      "type": "followup",
+      "strategy": "raw",
+      "query": "What about kids?",
+      "hit": false,
+      "chunk_ids": [
+        "pag-p99-2",
+        "pag-p46-0",
+        "pag-p99-3"
+      ],
+      "distances": [
+        0.6343,
+        0.6381,
+        0.6759
+      ],
+      "relevant_hit": false,
+      "covered": true
+    },
+    {
+      "case_id": "followup-kids",
+      "type": "followup",
+      "strategy": "joined",
+      "query": "How many minutes of physical activity do adults need each week? What about kids?",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p48-2",
+        "pag-p8-1",
+        "pag-p68-0"
+      ],
+      "distances": [
+        0.2474,
+        0.2481,
+        0.2631
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "followup-kids",
+      "type": "followup",
+      "strategy": "gold",
+      "query": "physical activity guidelines for children and adolescents ages 6 through 17",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p46-0",
+        "pag-p8-0",
+        "pag-p47-1"
+      ],
+      "distances": [
+        0.1122,
+        0.1504,
+        0.1815
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "followup-sodium-children",
+      "type": "followup",
+      "strategy": "raw",
+      "query": "And for young children?",
+      "hit": false,
+      "chunk_ids": [
+        "dga-p8-0",
+        "pag-p99-2",
+        "pag-p100-4"
+      ],
+      "distances": [
+        0.6551,
+        0.6612,
+        0.6669
+      ],
+      "relevant_hit": false,
+      "covered": true
+    },
+    {
+      "case_id": "followup-sodium-children",
+      "type": "followup",
+      "strategy": "joined",
+      "query": "How much sodium should people eat per day? And for young children?",
+      "hit": true,
+      "chunk_ids": [
+        "dga-p6-0",
+        "dga-p4-0",
+        "dga-p8-1"
+      ],
+      "distances": [
+        0.3003,
+        0.4851,
+        0.4875
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "followup-sodium-children",
+      "type": "followup",
+      "strategy": "gold",
+      "query": "sodium limits for children by age",
+      "hit": true,
+      "chunk_ids": [
+        "dga-p6-0",
+        "dga-p5-0",
+        "dga-p8-1"
+      ],
+      "distances": [
+        0.3241,
+        0.5553,
+        0.5637
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "followup-vigorous",
+      "type": "followup",
+      "strategy": "raw",
+      "query": "What if I do vigorous activity instead?",
+      "hit": false,
+      "chunk_ids": [
+        "pag-p56-1",
+        "pag-p24-0",
+        "pag-p90-1"
+      ],
+      "distances": [
+        0.3725,
+        0.3994,
+        0.4025
+      ],
+      "relevant_hit": false,
+      "covered": true
+    },
+    {
+      "case_id": "followup-vigorous",
+      "type": "followup",
+      "strategy": "joined",
+      "query": "How much moderate-intensity activity should adults do each week? What if I do vigorous activity instead?",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p63-1",
+        "pag-p58-0",
+        "pag-p109-1"
+      ],
+      "distances": [
+        0.2213,
+        0.2544,
+        0.2701
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "followup-vigorous",
+      "type": "followup",
+      "strategy": "gold",
+      "query": "minutes of vigorous-intensity aerobic activity per week for adults",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p63-1",
+        "pag-p8-2",
+        "pag-p63-0"
+      ],
+      "distances": [
+        0.1864,
+        0.261,
+        0.2689
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "followup-solid-foods",
+      "type": "followup",
+      "strategy": "raw",
+      "query": "When can they start solid foods?",
+      "hit": true,
+      "chunk_ids": [
+        "dga-p8-0",
+        "dga-p7-1",
+        "dga-p7-2"
+      ],
+      "distances": [
+        0.5019,
+        0.5027,
+        0.5338
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "followup-solid-foods",
+      "type": "followup",
+      "strategy": "joined",
+      "query": "What should infants be fed in the first 6 months? When can they start solid foods?",
+      "hit": true,
+      "chunk_ids": [
+        "dga-p7-2",
+        "dga-p8-0",
+        "dga-p7-1"
+      ],
+      "distances": [
+        0.318,
+        0.332,
+        0.3755
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "followup-solid-foods",
+      "type": "followup",
+      "strategy": "gold",
+      "query": "when infants can begin eating solid foods",
+      "hit": true,
+      "chunk_ids": [
+        "dga-p8-0",
+        "dga-p7-2",
+        "dga-p7-1"
+      ],
+      "distances": [
+        0.2806,
+        0.3315,
+        0.3806
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "followup-pregnancy-running",
+      "type": "followup",
+      "strategy": "raw",
+      "query": "Is it safe to keep running?",
+      "hit": false,
+      "chunk_ids": [
+        "pag-p87-0",
+        "pag-p89-0",
+        "pag-p88-0"
+      ],
+      "distances": [
+        0.5061,
+        0.5101,
+        0.5445
+      ],
+      "relevant_hit": false,
+      "covered": true
+    },
+    {
+      "case_id": "followup-pregnancy-running",
+      "type": "followup",
+      "strategy": "joined",
+      "query": "How much physical activity is recommended during pregnancy? Is it safe to keep running?",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p93-2",
+        "pag-p80-2",
+        "pag-p80-0"
+      ],
+      "distances": [
+        0.1934,
+        0.2152,
+        0.2227
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "followup-pregnancy-running",
+      "type": "followup",
+      "strategy": "gold",
+      "query": "continuing vigorous-intensity activity such as running during pregnancy",
+      "hit": true,
+      "chunk_ids": [
+        "pag-p80-0",
+        "pag-p80-3",
+        "pag-p80-1"
+      ],
+      "distances": [
+        0.2633,
+        0.2698,
+        0.2768
+      ],
+      "relevant_hit": true,
+      "covered": true
+    },
+    {
+      "case_id": "offtopic-france",
+      "type": "offtopic",
+      "strategy": "raw",
+      "query": "What is the capital of France?",
+      "hit": null,
+      "chunk_ids": [
+        "pag-p54-2",
+        "pag-p54-1",
+        "pag-p47-0"
+      ],
+      "distances": [
+        0.9191,
+        0.9318,
+        0.9382
+      ],
+      "relevant_hit": null,
+      "covered": false
+    },
+    {
+      "case_id": "offtopic-france",
+      "type": "offtopic",
+      "strategy": "joined",
+      "query": "What is the capital of France?",
+      "hit": null,
+      "chunk_ids": [
+        "pag-p54-2",
+        "pag-p54-1",
+        "pag-p47-0"
+      ],
+      "distances": [
+        0.9191,
+        0.9318,
+        0.9382
+      ],
+      "relevant_hit": null,
+      "covered": false
+    },
+    {
+      "case_id": "offtopic-france",
+      "type": "offtopic",
+      "strategy": "gold",
+      "query": "What is the capital of France?",
+      "hit": null,
+      "chunk_ids": [
+        "pag-p54-2",
+        "pag-p54-1",
+        "pag-p47-0"
+      ],
+      "distances": [
+        0.9191,
+        0.9318,
+        0.9382
+      ],
+      "relevant_hit": null,
+      "covered": false
+    },
+    {
+      "case_id": "offtopic-router",
+      "type": "offtopic",
+      "strategy": "raw",
+      "query": "How do I reset my Wi-Fi router?",
+      "hit": null,
+      "chunk_ids": [
+        "pag-p111-3",
+        "pag-p90-1",
+        "dga-p8-2"
+      ],
+      "distances": [
+        0.8988,
+        0.9173,
+        0.9238
+      ],
+      "relevant_hit": null,
+      "covered": false
+    },
+    {
+      "case_id": "offtopic-router",
+      "type": "offtopic",
+      "strategy": "joined",
+      "query": "How do I reset my Wi-Fi router?",
+      "hit": null,
+      "chunk_ids": [
+        "pag-p111-3",
+        "pag-p90-1",
+        "dga-p8-2"
+      ],
+      "distances": [
+        0.8988,
+        0.9173,
+        0.9238
+      ],
+      "relevant_hit": null,
+      "covered": false
+    },
+    {
+      "case_id": "offtopic-router",
+      "type": "offtopic",
+      "strategy": "gold",
+      "query": "How do I reset my Wi-Fi router?",
+      "hit": null,
+      "chunk_ids": [
+        "pag-p111-3",
+        "pag-p90-1",
+        "dga-p8-2"
+      ],
+      "distances": [
+        0.8988,
+        0.9173,
+        0.9238
+      ],
+      "relevant_hit": null,
+      "covered": false
+    }
+  ]
+}

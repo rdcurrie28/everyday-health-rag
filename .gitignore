@@ -1,0 +1,9 @@
+.env
+.venv/
+.index*/
+.models/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.coverage

@@ -1,0 +1,41 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.13.5"
+
+      - name: Install dependencies
+        run: uv sync --frozen --python 3.12
+
+      - name: Restore embedding model cache
+        uses: actions/cache@v4
+        with:
+          path: .models
+          key: fastembed-BAAI-bge-small-en-v1.5
+
+      - name: Lint
+        run: |
+          uv run ruff check .
+          uv run ruff format --check .
+
+      - name: Unit tests
+        run: >
+          uv run pytest
+          --cov=healthrag.conversation --cov=healthrag.llm
+          --cov-branch --cov-fail-under=100
+
+      - name: Build the search index
+        run: uv run python -m healthrag.build_index
+
+      - name: Retrieval eval gate
+        run: uv run python -m evals.run_eval --mode retrieval --label ci --no-save
