@@ -24,7 +24,7 @@ from healthrag.conversation import (
 )
 from healthrag.llm import LLMError
 from healthrag.logs import log_event
-from healthrag.retrieval import Chunk, IndexNotReady, open_retriever
+from healthrag.retrieval import Chunk, IndexNotReady, shared_retriever
 
 EXAMPLE_GROUPS = {
     "🏃 Physical activity": [
@@ -61,7 +61,7 @@ if settings.deployed and settings.missing_secrets():
 
 @st.cache_resource(show_spinner="Loading the search index…")
 def load_retriever():
-    retriever = open_retriever(settings)
+    retriever = shared_retriever(settings)
     log_event(
         "startup",
         git_sha=settings.git_sha,

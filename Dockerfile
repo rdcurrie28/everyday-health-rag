@@ -39,4 +39,4 @@ ENV APP_MODE=deployed \
 
 USER app
 EXPOSE 8080
-CMD ["sh", "-c", "exec streamlit run app.py --server.port=${PORT:-8080} --server.address=0.0.0.0"]
+CMD ["sh", "-c", "exec python -m healthrag.serve --server.port=${PORT:-8080} --server.address=0.0.0.0"]
